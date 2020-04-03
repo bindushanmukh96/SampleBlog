@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #lr {
+            text-decoration: none;
+        }
+    </style>
+    <title>Sample Blog</title>
+</head>
+
+<body>
+    <div>
+
+        <h1> Blog-Posts</h1>
+        <a id="lr" href="/posts" class="btn btn-success">New Post</a>
+        <a id="lr" href="/posts/aboutus" class="btn btn-success">&ensp; &ensp;About Us</a>
+        <% posts.forEach(post =>{%>
+
+            <div>
+                Title:
+                <%= post.title %>
+
+                    <br> Description:
+                    <%= post.descripton  %>
+
+                        <br> Author:
+                        <%= post.postedBy %>
+                            <br> <a id="lr" href="/posts/readmore/<%=post.id%>" class="btn ">Readmore </a>
+                            <a id="lr" href="/posts/edit/<%=post.id%>" class="btn ">&ensp; &ensp; Edit </a>
+
+                            <form action="/posts/delete/<%= post.id %>?_method=DELETE" method="POST" class="inline">
+                                <button type="submit" class="btn">Delete</button>
+                            </form>
+
+
+            </div>
+
+            <%})%>
+
+    </div>
+</body>

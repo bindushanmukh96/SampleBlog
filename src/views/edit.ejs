@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #lr {
+            text-decoration: none;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/posts/edit/<%= posts.id %>?_method=PUT" method="post">
+        <div>
+            <label for="posttitle">Post Title</label>
+            <br> <input required value=' <%= posts.title %>' type="text" name="title">
+            <br><label for="postbody">postBody</label>
+            <br><textarea type="text" name="description of post"><%= posts.descripton  %></textarea>
+            <br><label for="postedby">postAuthor</label>
+            <br><input type="text" value='<%= posts.postedBy %>' name="name of the author">
+        </div>
+        <a id="lr" href="/">home</a>
+        <button type="submit" class="btn btn-primary">save</button>
+    </form>
+</body>
+
+</html>

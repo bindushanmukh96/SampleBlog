@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #lr {
+            text-decoration: none;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Blog</title>
+</head>
+
+<body>
+    <div>
+        <p>add new post from here</p>
+        <form action="/posts" method="post">
+            <div>
+                <label for="posttitle">Post Title</label>
+                <br> <input required type="text" name="title">
+                <br><label for="postbody">postBody</label>
+                <br><textarea type="text" name="description of post"></textarea>
+                <br><label for="postedby">postAuthor</label>
+                <br><input type="text" name="name of the author">
+            </div>
+            <a id="lr" href="/">home</a>
+            <button type="submit" class="btn btn-primary">save</button>
+        </form>
+    </div>
+</body>
+
+</html>

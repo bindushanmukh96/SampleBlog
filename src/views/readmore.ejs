@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #lr {
+            text-decoration: none;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/posts/readmore/<%=posts.id %>" method="get">
+        <div>
+            Title:
+            <%= posts.title %>
+                <br> Description:
+                <%= posts.descripton  %>
+                    <br> Author:
+                    <%= posts.postedBy %>
+                        <br> <a id="lr" href="/">home</a>
+                        <a id="lr" href="/posts/edit/<%=posts.id%>" class="btn ">&ensp; &ensp;Edit</a>
+        </div>
+    </form>
+</body>
+
+</html>
