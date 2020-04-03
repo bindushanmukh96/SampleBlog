@@ -38,11 +38,14 @@ public deletePost = async function(req:Request, res:Response) {
     }
     //function to edit post
 public editPost = async function(req:Request, res:Response) {
+    const date:String=new Date().toDateString();
+    const time:String=date+" "+new Date().toLocaleTimeString();
         await Post.findById(req.params.id, function(err, post) {
             post.title = req.body.title,
                 post.descripton = req.body.descripton,
                 post.postedBy = req.body.postedBy,
-                post.category=req.body.category
+                post.category=req.body.category,
+                post.updatedAt=time,
             post.save(function(err, post) {
                 res.status(200).json({
                     "message" :"the post edited succesfully",
@@ -53,11 +56,13 @@ public editPost = async function(req:Request, res:Response) {
     }
     //function to add new post
 public newPost = async(req:Request, res:Response) => {
+    const date:String=new Date().toDateString();
     const post = new Post({
         title: req.body.title,
         descripton: req.body.descripton,
         postedBy: req.body.postedBy,
-        category:req.body.category
+        category:req.body.category,
+        createdAt:date
     })
     try {
         let postsaved = await post.save()

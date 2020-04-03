@@ -6,4 +6,6 @@ export  const postSchema = new mongoose.Schema({
         descripton: String,
         postedBy: String,
         category:String,
+        createdAt:String,
+        updatedAt: String,
     })
